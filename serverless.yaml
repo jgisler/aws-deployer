@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+
+  AutoDeploymentBucket:
+    Type: AWS::S3::Bucket
+
+  AutoDeploymentListener:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: nodejs6.10
+      Handler: index.handler
+      Events:
+        S3Events:
+          Type: S3
+          Properties:
+            Bucket: !Ref AutoDeploymentBucket
+            Events: s3:ObjectCreated:*
+
+Outputs:
+  AutoDeploymentBucket:
+    Description: Bucket on which the deployer is listening
+    Value: !Ref AutoDeploymentBucket
+    Export:
+      Name: AutoDeploymentBucket

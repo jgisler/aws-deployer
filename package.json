@@ -1,0 +1,31 @@
+{
+  "name": "aws-deployer",
+  "version": "1.0.0",
+  "description": "An S3 bucket listener that will deploy a Lambda function package when it is copied to S3",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha '*.spec.js' ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgisler/aws-deployer.git"
+  },
+  "keywords": [
+    "AWS",
+    "Lambda",
+    "SAM"
+  ],
+  "author": "James Gisler",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jgisler/aws-deployer/issues"
+  },
+  "homepage": "https://github.com/jgisler/aws-deployer#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.84.0",
+    "aws-sdk-mock": "^1.7.0",
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
+    "rewire": "^2.5.2"
+  }
+}
